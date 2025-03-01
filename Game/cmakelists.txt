@@ -1,0 +1,52 @@
+cmake_minimum_required( VERSION 3.10 )
+
+###################
+# Game Project
+###################
+
+# File Setup
+file( GLOB_RECURSE GameSourceFiles
+	Source/*.cpp
+	Source/*.h
+	../DataRaw/Shaders/*.vert
+	../DataRaw/Shaders/*.frag
+	../DataRaw/Shaders/*.sc
+	../DataRaw/*.bat
+	../
+	../BuildShaders.bat
+	../GenerateProjectFiles.bat
+)
+source_group( TREE ${CMAKE_CURRENT_SOURCE_DIR}/.. FILES ${GameSourceFiles} )
+
+# Project Creation
+add_executable( GameProject WIN32 ${GameSourceFiles} )
+
+target_include_directories( GameProject PUBLIC
+	Source
+	../Framework/Source
+	../Libraries
+)
+
+target_compile_features( GameProject PRIVATE cxx_std_17 )
+
+# PCH Files
+target_precompile_headers( GameProject PRIVATE ../Framework/Source/Framework.h )
+file( GLOB_RECURSE GamePCHFiles ${CMAKE_CURRENT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/cmake_pch.* )
+source_group( "CMake PCH Files" FILES ${GamePCHFiles} )
+
+# Libraries to Link
+target_link_libraries( GameProject
+	Framework
+	bgfx
+	bx
+	bimg
+	otherLibs
+	box2d
+	Jolt
+)
+
+# Visual Studio Settings
+if( CMAKE_CXX_COMPILER_ID MATCHES "MSVC" )
+	# Debug working directory
+	set_property( TARGET GameProject PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}" )
+endif()

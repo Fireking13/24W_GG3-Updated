@@ -1,0 +1,42 @@
+
+.theme-dark {
+	--bold-weight: var(--font-bold);
+	--bold-color: #ffcc63;
+	--italic-color: #9ab4ff;
+
+	--gradient01: #fdfc96;
+	--gradient02: #e4f78f;
+	--gradient03: #bfef88;
+	--gradient04: #97e47e;
+	--gradient05: #79dc78;
+	--gradient06: #58d16e;
+
+	/* --code-default: #b2a584; */
+	--code-def: #dcdcaa;
+	--code-type: #569cd6;
+	--code-keyword: #d8a0df;
+	--code-variable: #91dce6;
+	--code-meta: #9b9b9b;
+	--code-operator: #b4b4b4;
+	--code-number: #a6cea2;
+	--code-string: #a08e84;
+	--code-comment: #57a64a;
+}
+
+.cm-header-1, .markdown-preview-view h1 {color: var(--gradient01);}
+.cm-header-2, .markdown-preview-view h2 {color: var(--gradient02);}
+.cm-header-3, .markdown-preview-view h3 {color: var(--gradient03);}
+.cm-header-4, .markdown-preview-view h4 {color: var(--gradient04);}
+.cm-header-5, .markdown-preview-view h5 {color: var(--gradient05);}
+.cm-header-6, .markdown-preview-view h6 {color: var(--gradient06);}
+
+/* .cm-hmd-codeblock {color: var(--code-default);} */
+.cm-def {color: var(--code-def);}
+.cm-type {color: var(--code-type);}
+.cm-keyword {color: var(--code-keyword);}
+.cm-variable {color: var(--code-variable);}
+.cm-meta {color: var(--code-meta);}
+.cm-operator {color: var(--code-operator);}
+.cm-number {color: var(--code-number);}
+.cm-string {color: var(--code-string);}
+.cm-comment {color: var(--code-comment);}

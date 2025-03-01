@@ -1,0 +1,7 @@
+build/
+.vs/
+out/
+Data/Shaders/
+Notes/.trash/
+Notes/.obsidian/workspace.json
+Notes/.obsidian/workspace-mobile.json
